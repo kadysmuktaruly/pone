@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Manga Site{% endblock %}</title>
+
+    <!-- Google Font for Japanese style -->
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            font-family: 'Hiragino Kaku Gothic Pro', 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+            background: url("{% static 'manga/bg.jpg' %}") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background: rgba(255, 250, 240, 0.95); /* warm off-white */
+            border-radius: 16px;
+            border: 1px solid #f4a261;
+            padding: 2rem;
+            width: 100%;
+            max-width: 420px;
+            height: 500px;
+            overflow-y: auto;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            font-family: 'Hiragino Kaku Gothic Pro', 'Noto Sans JP', sans-serif;
+            font-size: 1.8rem;
+            color: #e85d04;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+
+        form {
+            margin: 0;
+            padding: 0;
+        }
+
+        form p {
+            margin: 0;
+            padding: 0;
+        }
+
+        form input, form button {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e9c46a;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background: #f77f00;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s ease;
+        }
+
+        form button:hover {
+            background: #d65a00;
+        }
+
+        .link {
+            text-align: center;
+        }
+
+        .link a {
+            color: #f77f00;
+            text-decoration: none;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
